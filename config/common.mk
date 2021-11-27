@@ -146,10 +146,12 @@ PRODUCT_PACKAGES += \
     BtHelper
 
 # Charger
+ifeq ($(USE_PIXEL_CHARGER),true)
 PRODUCT_PACKAGES += \
     charger_res_images \
     product_charger_res_images \
     product_charger_res_images_vendor
+endif
 
 # Extra tools
 PRODUCT_PACKAGES += \
