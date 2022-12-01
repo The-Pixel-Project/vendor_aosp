@@ -226,6 +226,8 @@ CUSTOM_LOCALES += \
     cy_GB \
     fur_IT
 
+include vendor/aosp/config/custom.mk
+
 include vendor/aosp/config/version.mk
 
 -include vendor/aosp-priv/keys/keys.mk
