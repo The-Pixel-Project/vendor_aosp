@@ -25,3 +25,17 @@ ifeq ($(filter-out OFFICIAL,$(CUSTOM_BUILD_TYPE)),)
 PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/common/etc/init/init.custom-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.custom-updater.rc
 endif
+
+# Signing
+ifeq (user,$(TARGET_BUILD_VARIANT))
+ifneq (,$(wildcard .android-certs/releasekey.pk8))
+PRODUCT_DEFAULT_DEV_CERTIFICATE := .android-certs/releasekey
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.oem_unlock_supported=1
+endif
+ifneq (,$(wildcard .android-certs/verity.pk8))
+PRODUCT_VERITY_SIGNING_KEY := .android-certs/verity
+endif
+ifneq (,$(wildcard .android-certs/otakey.x509.pem))
+PRODUCT_OTA_PUBLIC_KEYS := .android-certs/otakey.x509.pem
+endif
+endif
