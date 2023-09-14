@@ -7,4 +7,6 @@ endif
 
 # Charger
 PRODUCT_PACKAGES += \
-    product_charger_res_images
+    charger_res_images \
+    product_charger_res_images \
+    product_charger_res_images_vendor
