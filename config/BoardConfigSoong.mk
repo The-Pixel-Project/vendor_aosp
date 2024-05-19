@@ -50,7 +50,8 @@ SOONG_CONFIG_customGlobalVars += \
     target_surfaceflinger_udfps_lib \
     target_trust_usb_control_path \
     target_trust_usb_control_enable \
-    target_trust_usb_control_disable
+    target_trust_usb_control_disable \
+    uses_miui_camera
 
 ifneq ($(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH),)
 SOONG_CONFIG_customGlobalVars += \
@@ -62,6 +63,7 @@ SOONG_CONFIG_customGlobalVars_camera_override_format_from_reserved := $(TARGET_C
 SOONG_CONFIG_customGlobalVars_gralloc_handle_has_custom_content_md_reserved_size := $(TARGET_GRALLOC_HANDLE_HAS_CUSTOM_CONTENT_MD_RESERVED_SIZE)
 SOONG_CONFIG_customGlobalVars_gralloc_handle_has_reserved_size := $(TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE)
 SOONG_CONFIG_customGlobalVars_gralloc_handle_has_ubwcp_format := $(TARGET_GRALLOC_HANDLE_HAS_UBWCP_FORMAT)
+SOONG_CONFIG_customGlobalVars_uses_miui_camera := $(TARGET_USES_MIUI_CAMERA)
 
 # Set default values
 BOOTLOADER_MESSAGE_OFFSET ?= 0
