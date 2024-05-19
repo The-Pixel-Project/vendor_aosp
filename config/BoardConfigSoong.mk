@@ -78,6 +78,11 @@ ifneq ($(TARGET_POWERSHARE_DISABLED),)
     $(call soong_config_set,lineage_powershare,powershare_disabled,$(TARGET_POWERSHARE_DISABLED))
 endif
 
+# MIUI Camera
+ifneq ($(TARGET_USES_MIUI_CAMERA),)
+    $(call soong_config_set,camera,uses_miui_camera,$(TARGET_USES_MIUI_CAMERA))
+endif
+
 # Recovery
 ifneq ($(BOOTLOADER_MESSAGE_OFFSET),)
     $(call soong_config_set,lineage_recovery,bootloader_message_offset,$(BOOTLOADER_MESSAGE_OFFSET))
