@@ -1,6 +1,10 @@
 # Bootanimation
 include vendor/aosp/config/bootanimation.mk
 
+# BtHelper
+PRODUCT_PACKAGES += \
+    BtHelper
+
 # Call Recording
 TARGET_CALL_RECORDING_SUPPORTED ?= true
 ifneq ($(TARGET_CALL_RECORDING_SUPPORTED),false)
