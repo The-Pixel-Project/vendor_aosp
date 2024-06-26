@@ -14,5 +14,8 @@ PRODUCT_PACKAGES += \
     product_charger_res_images \
     product_charger_res_images_vendor
 
+# Fonts
+include vendor/aosp/fonts/fonts.mk
+
 # Gapps
 $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
