@@ -8,8 +8,20 @@ CUSTOM_BUILD_DATE := $(CUSTOM_DATE_YEAR)$(CUSTOM_DATE_MONTH)$(CUSTOM_DATE_DAY)-$
 
 CUSTOM_PLATFORM_VERSION := 14.0
 
-CUSTOM_VERSION := PixelProject_$(CUSTOM_BUILD)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)
+CUSTOM_VERSION := PixelProject_$(CUSTOM_BUILD)-$(CUSTOM_BUILD_TYPE)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)
 CUSTOM_VERSION_PROP := fourteen
+
+
+CUSTOM_BUILD_TYPE ?= Unofficial
+
+# Only include Updater for official  build
+ifeq ($(filter-out Official,$(CUSTOM_BUILD_TYPE)),)
+    PRODUCT_PACKAGES += \
+        Updater
+
+PRODUCT_COPY_FILES += \
+    vendor/aosp/prebuilt/common/etc/init/init.pixel-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.pixel-updater.rc
+endif
 
 # Signing
 ifneq (eng,$(TARGET_BUILD_VARIANT))

@@ -10,4 +10,6 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     org.pixelproject.fingerprint=$(ROM_FINGERPRINT) \
     org.pixelproject.version=$(CUSTOM_VERSION) \
     org.pixelproject.device=$(CUSTOM_BUILD) \
+    org.pixelproject.buildtype=$(CUSTOM_BUILD_TYPE) \
+    org.pixelproject.base.version=$(CUSTOM_PLATFORM_VERSION) \
     ro.modversion=$(CUSTOM_VERSION)
