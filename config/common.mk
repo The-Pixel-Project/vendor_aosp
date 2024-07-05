@@ -280,6 +280,9 @@ CUSTOM_LOCALES += \
 # Vendor configurations
 $(call inherit-product, vendor/custom/config.mk)
 
+# Optimisation
+$(call inherit-product, vendor/aosp/config/common/optimisation.mk)
+
 include vendor/aosp/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
