@@ -12,15 +12,15 @@ CUSTOM_VERSION := PixelProject_$(CUSTOM_BUILD)-$(CUSTOM_BUILD_TYPE)-$(CUSTOM_PLA
 CUSTOM_VERSION_PROP := fourteen
 
 
-CUSTOM_BUILD_TYPE ?= Unofficial
+CUSTOM_BUILD_TYPE ?= UNOFFICIAL
 
 # Only include Updater for official  build
-ifeq ($(filter-out Official,$(CUSTOM_BUILD_TYPE)),)
+ifeq ($(filter-out OFFICIAL,$(CUSTOM_BUILD_TYPE)),)
     PRODUCT_PACKAGES += \
         Updater
 
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/init/init.pixel-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.pixel-updater.rc
+    vendor/aosp/prebuilt/common/etc/init/init.tpp-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.tpp-updater.rc
 endif
 
 # Signing
