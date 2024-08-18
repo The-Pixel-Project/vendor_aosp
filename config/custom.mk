@@ -50,3 +50,6 @@ include vendor/aosp/fonts/fonts.mk
 
 # Gapps
 $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+
+# Don't dexpreopt prebuilts. (For GMS).
+DONT_DEXPREOPT_PREBUILTS := true
