@@ -8,6 +8,9 @@ PRODUCT_COPY_FILES += \
     vendor/aosp/config/permissions/com.google.android.apps.dialer.call_recording_audio.features.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.android.apps.dialer.call_recording_audio.features.xml
 endif
 
+# Include certification
+$(call inherit-product-if-exists, vendor/certification/config.mk)
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images \
