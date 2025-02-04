@@ -57,5 +57,9 @@ $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 # Don't dexpreopt prebuilts. (For GMS).
 DONT_DEXPREOPT_PREBUILTS := true
 
+# PixelLauncherOverlays
+PRODUCT_PACKAGES += \
+    PixelLauncherOverlayBlur
+
 # Themed icons for Pixel Launcher
 $(call inherit-product, vendor/google/overlays/ThemeIcons/config.mk)
