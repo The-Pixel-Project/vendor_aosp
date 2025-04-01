@@ -29,6 +29,7 @@ $(CUSTOM_TARGET_PACKAGE): $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) $(SHA256) $(CUSTOM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CUSTOM_TARGET_PACKAGE).sha256sum
 	$(hide) rm -rf $(call intermediates-dir-for,PACKAGING,target_files)
 	$(hide) ./vendor/aosp/build/tools/ascii_output.sh
+	$(hide) ./vendor/aosp/build/tools/createjson.sh $(CUSTOM_TARGET_PACKAGE)
 	echo -e ${CL_BLD}${CL_RED}"===============================-Package complete-==============================="${CL_RED}
 	echo -e ${CL_BLD}${CL_GRN}"Zip: "${CL_RED} $(CUSTOM_TARGET_PACKAGE)${CL_RST}
 	echo -e ${CL_BLD}${CL_GRN}"SHA256: "${CL_RED}" `cat $(CUSTOM_TARGET_PACKAGE).sha256sum | awk '{print $$1}' `"${CL_RST}
