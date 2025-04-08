@@ -69,5 +69,10 @@ PRODUCT_PACKAGES += \
     PixelLauncherOverlayBlur \
     PixelLauncherOverlayCustom
 
+# SystemUI Customisation
+PRODUCT_PACKAGES += \
+    SystemUICustomOverlay \
+    SystemUIFlagFlipperOverlay
+
 # Themed icons for Pixel Launcher
 $(call inherit-product, vendor/google/overlays/ThemeIcons/config.mk)
