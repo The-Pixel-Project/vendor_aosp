@@ -15,7 +15,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.custom.fingerprint=$(ROM_FINGERPRINT) \
     ro.custom.version=$(CUSTOM_VERSION) \
     ro.custom.display.version=$(CUSTOM_DISPLAY_VERSION) \
-    ro.custom.releasetype=$(CUSTOM_BUILD_TYPE)
+    ro.custom.releasetype=$(CUSTOM_BUILD_TYPE) \
+    ro.custom.maintainer=$(CUSTOM_MAINTAINER)
 
 # Only include Updater for official  build
 ifeq ($(filter-out OFFICIAL,$(CUSTOM_BUILD_TYPE)),)
