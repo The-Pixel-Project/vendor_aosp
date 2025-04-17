@@ -68,6 +68,10 @@ endif
 # Fonts
 include vendor/aosp/fonts/fonts.mk
 
+# GameSpace
+PRODUCT_PACKAGES += \
+    GameSpace
+
 # Gapps
 $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 
