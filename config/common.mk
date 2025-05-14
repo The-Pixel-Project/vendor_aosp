@@ -252,6 +252,8 @@ CUSTOM_LOCALES += \
     cy_GB \
     fur_IT
 
+include vendor/aosp/config/aosp_audio.mk
+
 include vendor/aosp/config/custom.mk
 
 include vendor/aosp/config/version.mk
